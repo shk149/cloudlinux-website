@@ -8,19 +8,19 @@ const products = [
   {
     name: "CloudLinux",
     description:
-      "Shared hosting OS to make your servers incredibly stable, secure, and profitable.",
+      "Shared hosting OS to make your servers stable, secure, and profitable.",
     icon: "/logos/cloudlinux.svg",
   },
   {
     name: "AccelerateWP",
     description:
-      "Automated WordPress optimization suite that speeds up sites on shared hosting.",
+      "Automated WordPress optimization that speeds up sites on shared hosting.",
     icon: "/icons/awp.svg",
   },
   {
     name: "Imunify360",
     description:
-      "Automated, multi-layered security for Linux web servers with real-time protection.",
+      "Multi-layered security for Linux web servers with real-time protection.",
     icon: "/icons/imunify.svg",
   },
   {
@@ -32,13 +32,13 @@ const products = [
   {
     name: "KernelCare",
     description:
-      "Automated, rebootless security patching for every Linux distribution.",
+      "Rebootless security patching for every Linux distribution.",
     icon: "/illustrations/group-265.svg",
   },
   {
     name: "WordPress Services",
     description:
-      "Offer maintenance, site audits, and repair services to WordPress hosting clients.",
+      "Maintenance, audits, and repair services for WordPress hosting clients.",
     icon: "/illustrations/group-259.svg",
   },
   {
@@ -50,7 +50,7 @@ const products = [
   {
     name: "Imunify Email",
     description:
-      "Automated, multi-layered email security providing real-time spam and threat filtering.",
+      "Multi-layered email security with real-time spam and threat filtering.",
     icon: "/illustrations/group-258.svg",
   },
   {
@@ -63,53 +63,53 @@ const products = [
 
 export default function Portfolio() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section id="portfolio" ref={ref} className="bg-[#F3F4F6] px-6 py-24">
+    <section id="portfolio" ref={ref} className="bg-[#F3F4F6] px-5 py-16 sm:px-8 sm:py-20 md:py-24">
       <div className="mx-auto max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="mb-14 text-center"
+          transition={{ duration: 0.5 }}
+          className="mb-10 text-center sm:mb-12"
         >
-          <h2 className="mb-4 text-3xl font-bold text-[#111827] md:text-4xl">
+          <h2 className="mb-3 text-2xl font-bold text-[#111827] sm:text-3xl md:text-4xl">
             Our <span className="text-[#2563EB]">Portfolio</span>
           </h2>
-          <p className="mx-auto max-w-xl text-[#4B5563]">
+          <p className="mx-auto max-w-md text-sm text-[#4B5563] sm:text-base">
             Wide range of products, services, and solutions for web hosting
           </p>
         </motion.div>
 
         {/* Product grid */}
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {products.map((product, i) => (
             <motion.div
               key={product.name}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{
-                duration: 0.45,
-                delay: i * 0.06,
+                duration: 0.4,
+                delay: i * 0.05,
                 ease: "easeOut",
               }}
-              className="group flex items-start gap-4 rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:border-[#2563EB]/30 hover:shadow-md"
+              className="group flex items-start gap-3.5 rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-all hover:border-[#2563EB]/25 hover:shadow-md"
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center">
                 <Image
                   src={product.icon}
                   alt={product.name}
-                  width={44}
-                  height={44}
-                  className="h-11 w-11 object-contain"
+                  width={36}
+                  height={36}
+                  className="h-9 w-9 object-contain"
                 />
               </div>
-              <div>
-                <h3 className="mb-1 text-base font-bold text-[#111827]">
+              <div className="min-w-0">
+                <h3 className="mb-0.5 text-sm font-bold text-[#111827] sm:text-base">
                   {product.name}
                 </h3>
-                <p className="text-sm leading-relaxed text-[#4B5563]">
+                <p className="text-xs leading-relaxed text-[#4B5563] sm:text-sm">
                   {product.description}
                 </p>
               </div>
@@ -120,12 +120,12 @@ export default function Portfolio() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.7 }}
-          className="mt-10 text-center"
+          transition={{ duration: 0.4, delay: 0.6 }}
+          className="mt-8 text-center sm:mt-10"
         >
           <a
             href="#"
-            className="inline-flex items-center gap-2 rounded-lg bg-[#2563EB] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-[#1E40AF]"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#2563EB] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-[#1D4ED8]"
           >
             View All Products & Offers
           </a>

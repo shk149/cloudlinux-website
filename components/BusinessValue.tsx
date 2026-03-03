@@ -10,7 +10,7 @@ const tabs = [
     items: [
       {
         icon: (
-          <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
           </svg>
         ),
@@ -23,7 +23,7 @@ const tabs = [
       },
       {
         icon: (
-          <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
           </svg>
         ),
@@ -36,7 +36,7 @@ const tabs = [
       },
       {
         icon: (
-          <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
           </svg>
         ),
@@ -55,7 +55,7 @@ const tabs = [
     items: [
       {
         icon: (
-          <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
           </svg>
         ),
@@ -68,7 +68,7 @@ const tabs = [
       },
       {
         icon: (
-          <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
           </svg>
         ),
@@ -81,13 +81,13 @@ const tabs = [
       },
       {
         icon: (
-          <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
           </svg>
         ),
         title: "Differentiate from competitors",
         points: [
-          "Offer premium WordPress hosting with built-in acceleration",
+          "Offer premium hosting with built-in acceleration",
           "Position above competition with superior security",
           "Deliver faster sites that convert better",
         ],
@@ -100,7 +100,7 @@ const tabs = [
     items: [
       {
         icon: (
-          <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 003 12c0-1.605.42-3.113 1.157-4.418" />
           </svg>
         ),
@@ -113,7 +113,7 @@ const tabs = [
       },
       {
         icon: (
-          <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
           </svg>
         ),
@@ -126,7 +126,7 @@ const tabs = [
       },
       {
         icon: (
-          <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         ),
@@ -144,19 +144,19 @@ const tabs = [
 export default function BusinessValue() {
   const [activeTab, setActiveTab] = useState("hosting");
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isInView = useInView(ref, { once: true, margin: "-60px" });
   const activeData = tabs.find((t) => t.id === activeTab)!;
 
   return (
-    <section id="solutions" ref={ref} className="bg-white px-6 py-24">
+    <section id="solutions" ref={ref} className="bg-white px-5 py-16 sm:px-8 sm:py-20 md:py-24">
       <div className="mx-auto max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="mb-12 text-center"
+          transition={{ duration: 0.5 }}
+          className="mb-10 text-center"
         >
-          <h2 className="mb-4 text-3xl font-bold text-[#111827] md:text-4xl">
+          <h2 className="mb-3 text-2xl font-bold text-[#111827] sm:text-3xl md:text-4xl">
             Built with{" "}
             <span className="text-[#2563EB]">Your Business</span> in Mind
           </h2>
@@ -164,19 +164,19 @@ export default function BusinessValue() {
 
         {/* Tabs */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mb-12 flex justify-center"
+          transition={{ duration: 0.4, delay: 0.15 }}
+          className="mb-10 flex justify-center"
         >
-          <div className="inline-flex rounded-xl border border-gray-200 bg-gray-50 p-1">
+          <div className="inline-flex flex-wrap justify-center gap-1 rounded-xl border border-gray-200 bg-gray-50 p-1">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`rounded-lg px-5 py-2.5 text-sm font-semibold transition-all ${
+                className={`rounded-lg px-4 py-2 text-xs font-semibold transition-all sm:px-5 sm:py-2.5 sm:text-sm ${
                   activeTab === tab.id
-                    ? "bg-[#2563EB] text-white shadow-md"
+                    ? "bg-[#2563EB] text-white shadow-sm"
                     : "text-[#4B5563] hover:text-[#111827]"
                 }`}
               >
@@ -190,33 +190,35 @@ export default function BusinessValue() {
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.35 }}
-            className="grid gap-8 md:grid-cols-3"
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.3 }}
+            className="grid gap-5 sm:gap-6 md:grid-cols-3"
           >
             {activeData.items.map((item, i) => (
               <div
                 key={i}
-                className="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
+                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md sm:p-7"
               >
-                <div className="mb-5 text-[#2563EB]">{item.icon}</div>
-                <h3 className="mb-4 text-lg font-bold text-[#111827]">
+                <div className="mb-4 inline-flex rounded-lg bg-blue-50 p-2.5 text-[#2563EB]">
+                  {item.icon}
+                </div>
+                <h3 className="mb-3 text-base font-bold text-[#111827] sm:text-lg">
                   {item.title}
                 </h3>
-                <ul className="flex flex-col gap-2.5">
+                <ul className="flex flex-col gap-2">
                   {item.points.map((point, j) => (
                     <li
                       key={j}
-                      className="flex items-start gap-2.5 text-sm leading-relaxed text-[#4B5563]"
+                      className="flex items-start gap-2 text-[13px] leading-relaxed text-[#4B5563] sm:text-sm"
                     >
                       <svg
-                        className="mt-0.5 h-4 w-4 shrink-0 text-[#2563EB]"
+                        className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#2563EB]"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        strokeWidth={2.5}
+                        strokeWidth={3}
                       >
                         <path
                           strokeLinecap="round"

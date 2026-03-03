@@ -16,18 +16,16 @@ const stackProducts = [
 const featureCategories = [
   {
     title: "Performance & Stability",
-    color: "#2563EB",
     features: [
       "Ensure fair per-hosting-account resource allocation",
       "Avoid page errors and timeouts from resource limits",
       "Database server monitoring",
       "Retain more processes per account",
-      "Handle multiple concurrent PHP requests more efficiently",
+      "Handle multiple concurrent PHP requests efficiently",
     ],
   },
   {
     title: "Security",
-    color: "#2563EB",
     features: [
       "Enterprise-class malware defense",
       "Real-time security vulnerability patching",
@@ -37,7 +35,6 @@ const featureCategories = [
   },
   {
     title: "Lifecycle",
-    color: "#2563EB",
     features: [
       "Live patching for PHP and OpenSSL",
       "Extended lifecycle support for older distributions",
@@ -45,10 +42,9 @@ const featureCategories = [
   },
   {
     title: "Program Value",
-    color: "#2563EB",
     features: [
       "Up to 40% VPS savings with bundles",
-      "White-label PHP version with your brand's name",
+      "White-label PHP version with your brand",
     ],
   },
 ];
@@ -58,7 +54,7 @@ export default function CustomizeStack() {
     stackProducts.filter((p) => p.default).map((p) => p.name)
   );
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   const toggleProduct = (product: string) => {
     setSelectedProducts((prev) =>
@@ -69,51 +65,50 @@ export default function CustomizeStack() {
   };
 
   return (
-    <section ref={ref} className="bg-gradient-to-b from-[#F0F5FF] to-[#E8EFF9] px-6 py-24">
+    <section ref={ref} className="bg-gradient-to-b from-[#EFF4FB] to-[#E4EBF5] px-5 py-16 sm:px-8 sm:py-20 md:py-24">
       <div className="mx-auto max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="mb-4 text-center"
+          transition={{ duration: 0.5 }}
+          className="mb-10 text-center"
         >
-          <h2 className="mb-4 text-3xl font-bold text-[#111827] md:text-4xl">
+          <h2 className="mb-3 text-2xl font-bold text-[#111827] sm:text-3xl md:text-4xl">
             Customize <span className="text-[#2563EB]">Your Stack</span>
           </h2>
-          <p className="mx-auto max-w-lg text-[#4B5563]">
-            Select products to see what capabilities you gain and what you might
-            be missing
+          <p className="mx-auto max-w-md text-sm text-[#4B5563] sm:text-base">
+            Select products to see what capabilities you gain
           </p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-12 grid gap-10 lg:grid-cols-[280px_1fr]"
+          transition={{ duration: 0.4, delay: 0.15 }}
+          className="grid gap-8 lg:grid-cols-[260px_1fr]"
         >
           {/* Left - Select Products */}
           <div>
-            <h3 className="mb-5 text-sm font-bold uppercase tracking-wide text-[#111827]">
+            <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-[#111827]">
               Select Products
             </h3>
             <div className="flex flex-col gap-2">
               {stackProducts.map((product) => (
                 <label
                   key={product.name}
-                  className={`flex cursor-pointer items-center gap-3 rounded-lg border px-4 py-3 transition-all ${
+                  className={`flex cursor-pointer items-center gap-2.5 rounded-lg border px-3.5 py-2.5 text-sm transition-all ${
                     selectedProducts.includes(product.name)
-                      ? "border-[#2563EB]/40 bg-white shadow-sm"
-                      : "border-gray-200 bg-white/60 hover:border-[#2563EB]/20 hover:bg-white"
+                      ? "border-[#2563EB]/30 bg-white shadow-sm"
+                      : "border-gray-200/80 bg-white/50 hover:border-[#2563EB]/15 hover:bg-white/80"
                   }`}
                 >
                   <input
                     type="checkbox"
                     checked={selectedProducts.includes(product.name)}
                     onChange={() => toggleProduct(product.name)}
-                    className="h-4 w-4 rounded border-gray-300 text-[#2563EB] accent-[#2563EB]"
+                    className="h-3.5 w-3.5 rounded border-gray-300 accent-[#2563EB]"
                   />
-                  <span className="text-sm font-medium text-[#111827]">
+                  <span className="text-[13px] font-medium text-[#111827]">
                     {product.name}
                   </span>
                 </label>
@@ -122,39 +117,35 @@ export default function CustomizeStack() {
           </div>
 
           {/* Right - What You Gain */}
-          <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
-            <h3 className="mb-6 text-sm font-bold uppercase tracking-wide text-[#111827]">
+          <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
+            <h3 className="mb-5 text-xs font-bold uppercase tracking-wider text-[#111827]">
               What You Gain
             </h3>
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="grid gap-5 sm:grid-cols-2">
               {featureCategories.map((category, i) => (
                 <motion.div
                   key={category.title}
-                  initial={{ opacity: 0, x: 20 }}
+                  initial={{ opacity: 0, x: 16 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
+                  transition={{ duration: 0.35, delay: 0.25 + i * 0.08 }}
                 >
-                  <h4 className="mb-3 text-sm font-bold text-[#2563EB]">
+                  <h4 className="mb-2.5 text-xs font-bold text-[#2563EB] sm:text-sm">
                     {category.title}
                   </h4>
-                  <ul className="flex flex-col gap-2">
+                  <ul className="flex flex-col gap-1.5">
                     {category.features.map((feature) => (
                       <li
                         key={feature}
-                        className="flex items-start gap-2 text-sm text-[#4B5563]"
+                        className="flex items-start gap-1.5 text-xs leading-relaxed text-[#4B5563] sm:text-[13px]"
                       >
                         <svg
-                          className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500"
+                          className="mt-0.5 h-3.5 w-3.5 shrink-0 text-emerald-500"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
-                          strokeWidth={2.5}
+                          strokeWidth={3}
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M4.5 12.75l6 6 9-13.5"
-                          />
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
                         {feature}
                       </li>

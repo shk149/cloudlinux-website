@@ -18,48 +18,48 @@ export default function Navbar() {
   return (
     <>
       {/* Top announcement bar */}
-      <div className="bg-[#0B1120] px-4 py-2 text-center text-sm text-gray-300">
+      <div className="bg-[#0B1120] px-5 py-2 text-center text-xs text-gray-400 sm:text-sm">
         Save up to 40%{" "}
-        <span className="text-white">
-          — try CloudLinux OS + ImunifyAV bundle for hosting providers
+        <span className="font-medium text-white">
+          — try CloudLinux OS + ImunifyAV bundle
         </span>
       </div>
 
       <motion.nav
-        initial={{ y: -20, opacity: 0 }}
+        initial={{ y: -10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.4 }}
         className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur-md"
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <a href="#" className="flex items-center gap-1">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-8">
+          <a href="#" className="flex shrink-0 items-center">
             <Image
               src="/logos/cloudlinux-logo.svg"
               alt="CloudLinux"
-              width={180}
-              height={40}
-              className="h-8 w-auto"
+              width={160}
+              height={36}
+              className="h-7 w-auto sm:h-8"
               priority
             />
           </a>
 
-          {/* Desktop */}
-          <div className="hidden items-center gap-8 md:flex">
+          {/* Desktop nav */}
+          <div className="hidden items-center gap-7 lg:flex">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-[#4B5563] transition-colors hover:text-[#111827]"
+                className="text-[13px] font-medium text-[#4B5563] transition-colors hover:text-[#111827]"
               >
                 {link.label}
               </a>
             ))}
           </div>
 
-          <div className="hidden items-center gap-3 md:flex">
+          <div className="hidden lg:block">
             <a
               href="#contact"
-              className="rounded-lg bg-[#2563EB] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-[#1E40AF]"
+              className="rounded-lg bg-[#2563EB] px-5 py-2.5 text-[13px] font-semibold text-white transition-all hover:bg-[#1D4ED8]"
             >
               Get Started Free
             </a>
@@ -67,13 +67,13 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-gray-200 md:hidden"
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 lg:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
             <svg
-              width="20"
-              height="20"
+              width="18"
+              height="18"
               viewBox="0 0 24 24"
               fill="none"
               stroke="#111827"
@@ -103,16 +103,16 @@ export default function Navbar() {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="overflow-hidden border-t border-gray-100 md:hidden"
+              transition={{ duration: 0.25 }}
+              className="overflow-hidden border-t border-gray-100 lg:hidden"
             >
-              <div className="flex flex-col gap-1 px-6 py-4">
+              <div className="flex flex-col gap-1 px-5 py-4">
                 {navLinks.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="rounded-lg px-4 py-3 text-sm font-medium text-[#4B5563] hover:bg-gray-50 hover:text-[#111827]"
+                    className="rounded-lg px-3 py-2.5 text-sm font-medium text-[#4B5563] hover:bg-gray-50 hover:text-[#111827]"
                   >
                     {link.label}
                   </a>
@@ -120,7 +120,7 @@ export default function Navbar() {
                 <a
                   href="#contact"
                   onClick={() => setMobileOpen(false)}
-                  className="mt-2 rounded-lg bg-[#2563EB] px-4 py-3 text-center text-sm font-semibold text-white"
+                  className="mt-2 rounded-lg bg-[#2563EB] px-4 py-2.5 text-center text-sm font-semibold text-white"
                 >
                   Get Started Free
                 </a>
