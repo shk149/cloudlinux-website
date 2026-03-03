@@ -82,7 +82,7 @@ export default function BusinessValue() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="mb-10 text-center"
+          className="mb-6 text-center"
         >
           <h2 className="heading-lg text-[#111827]">
             Built with <span className="text-[#2563EB]">Your Business</span> in Mind
@@ -94,7 +94,7 @@ export default function BusinessValue() {
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4, delay: 0.1 }}
-          className="mb-10 flex justify-center"
+          className="mb-8 flex justify-center"
         >
           <div className="inline-flex gap-1 rounded-full border border-gray-200 bg-gray-50 p-1">
             {tabs.map((tab) => (
@@ -126,7 +126,7 @@ export default function BusinessValue() {
             {activeData.items.map((item, i) => (
               <div
                 key={i}
-                className="rounded-[14px] border border-gray-200/80 bg-white p-7 shadow-[0_1px_3px_rgba(0,0,0,0.04)] transition-all duration-200 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]"
+                className="rounded-[14px] border border-gray-200/80 bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] transition-all duration-200 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]"
               >
                 <div className="mb-4 inline-flex rounded-xl bg-blue-50 p-2.5 text-[#2563EB]">
                   {item.icon}

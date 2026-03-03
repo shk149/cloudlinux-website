@@ -11,7 +11,7 @@ export default function Testimonials() {
     <section ref={ref} className="section-pad bg-white">
       <div className="mx-auto max-w-[720px]">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-center">
-          <h2 className="heading-lg mb-10 text-[#111827]">
+          <h2 className="heading-lg mb-6 text-[#111827]">
             What <span className="text-[#2563EB]">Our Customers</span> Say
           </h2>
         </motion.div>

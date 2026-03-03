@@ -9,7 +9,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-200 bg-[#F8F9FB]" style={{ padding: "clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 4vw, 3rem) clamp(1.5rem, 3vw, 2rem)" }}>
+    <footer className="border-t border-gray-200 bg-[#F8F9FB]" style={{ padding: "clamp(2rem, 3.5vw, 3rem) clamp(1.25rem, 4vw, 3rem) clamp(1.25rem, 2.5vw, 1.75rem)" }}>
       <div className="mx-auto max-w-[1200px]">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-1">

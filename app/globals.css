@@ -29,27 +29,27 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Fluid section spacing */
+/* Fluid section spacing — tuned for Mac retina screens (13"–27") */
 .section-pad {
   padding-left: clamp(1.25rem, 4vw, 3rem);
   padding-right: clamp(1.25rem, 4vw, 3rem);
-  padding-top: clamp(3.5rem, 8vw, 6rem);
-  padding-bottom: clamp(3.5rem, 8vw, 6rem);
+  padding-top: clamp(2.5rem, 4.5vw, 4rem);
+  padding-bottom: clamp(2.5rem, 4.5vw, 4rem);
 }
 
 /* Fluid headings */
 .heading-xl {
-  font-size: clamp(1.875rem, 1.5rem + 2.5vw, 3.5rem);
-  line-height: 1.1;
+  font-size: clamp(2rem, 1.4rem + 2.5vw, 3.25rem);
+  line-height: 1.08;
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
 .heading-lg {
-  font-size: clamp(1.5rem, 1.2rem + 2vw, 2.5rem);
+  font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.25rem);
   line-height: 1.15;
   font-weight: 700;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
 }
 
 /* Marquee */

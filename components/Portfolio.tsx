@@ -27,7 +27,7 @@ export default function Portfolio() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="mb-10 text-center"
+          className="mb-8 text-center"
         >
           <h2 className="heading-lg text-[#111827]">
             Our <span className="text-[#2563EB]">Portfolio</span>
@@ -61,7 +61,7 @@ export default function Portfolio() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.4, delay: 0.5 }}
-          className="mt-10 text-center"
+          className="mt-8 text-center"
         >
           <a href="#" className="inline-flex rounded-full bg-[#2563EB] px-7 py-3 text-[14px] font-bold uppercase tracking-wider text-white transition-all duration-200 hover:bg-[#1D4ED8] hover:shadow-lg hover:shadow-blue-500/20">
             View All Products & Offers
