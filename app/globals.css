@@ -19,6 +19,8 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -27,7 +29,30 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Marquee animation for partner logos */
+/* Fluid section spacing */
+.section-pad {
+  padding-left: clamp(1.25rem, 4vw, 3rem);
+  padding-right: clamp(1.25rem, 4vw, 3rem);
+  padding-top: clamp(3.5rem, 8vw, 6rem);
+  padding-bottom: clamp(3.5rem, 8vw, 6rem);
+}
+
+/* Fluid headings */
+.heading-xl {
+  font-size: clamp(1.875rem, 1.5rem + 2.5vw, 3.5rem);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.heading-lg {
+  font-size: clamp(1.5rem, 1.2rem + 2vw, 2.5rem);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+/* Marquee */
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }

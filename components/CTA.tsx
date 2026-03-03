@@ -9,48 +9,23 @@ export default function CTA() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section
-      id="contact"
-      ref={ref}
-      className="relative overflow-hidden px-5 py-16 sm:px-8 sm:py-20 md:py-24"
-    >
-      {/* Background image */}
+    <section id="contact" ref={ref} className="relative overflow-hidden" style={{ padding: "clamp(3rem, 7vw, 5rem) clamp(1.25rem, 4vw, 3rem)" }}>
       <div className="absolute inset-0">
-        <Image
-          src="/cta-bg.jpg"
-          alt=""
-          fill
-          className="object-cover"
-          sizes="100vw"
-          quality={85}
-        />
+        <Image src="/cta-bg.jpg" alt="" fill className="object-cover" sizes="100vw" quality={85} />
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
-        className="relative z-10 mx-auto max-w-2xl text-center"
-      >
-        <h2 className="mb-5 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-          Ready to make your web servers
-          <br className="hidden sm:block" />
-          more stable, secure, and fast?
+      <motion.div initial={{ opacity: 0, y: 24 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="relative z-10 mx-auto max-w-[640px] text-center">
+        <h2 className="heading-lg mb-5 text-white">
+          Ready to make your web servers<br className="hidden sm:block" /> more stable, secure, and fast?
         </h2>
-        <p className="mx-auto mb-8 max-w-md text-sm text-gray-300 sm:text-base">
+        <p className="mx-auto mb-8 max-w-md text-[15px] text-gray-300">
           Start with a free trial of CloudLinux or ImunifyAV today.
         </p>
-        <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-          <a
-            href="#"
-            className="w-full rounded-lg bg-[#2563EB] px-7 py-3.5 text-center text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-[#1D4ED8] hover:shadow-lg hover:shadow-blue-600/25 sm:w-auto"
-          >
+        <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a href="#" className="w-full rounded-full bg-[#2563EB] px-8 py-3.5 text-center text-[14px] font-bold uppercase tracking-wider text-white transition-all duration-200 hover:bg-[#1D4ED8] hover:shadow-lg hover:shadow-blue-500/25 sm:w-auto">
             Get Started for Free
           </a>
-          <a
-            href="#"
-            className="w-full rounded-lg border-2 border-white/25 px-7 py-3.5 text-center text-sm font-bold uppercase tracking-wide text-white transition-all hover:border-white/50 hover:bg-white/10 sm:w-auto"
-          >
+          <a href="#" className="w-full rounded-full border-2 border-white/25 px-8 py-3.5 text-center text-[14px] font-bold uppercase tracking-wider text-white transition-all duration-200 hover:border-white/50 hover:bg-white/10 sm:w-auto">
             Talk to an Expert
           </a>
         </div>

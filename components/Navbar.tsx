@@ -17,93 +17,72 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Top announcement bar */}
-      <div className="bg-[#0B1120] px-5 py-2 text-center text-xs text-gray-400 sm:text-sm">
-        Save up to 40%{" "}
-        <span className="font-medium text-white">
-          — try CloudLinux OS + ImunifyAV bundle
-        </span>
+      {/* Announcement */}
+      <div className="bg-[#0B1120] px-4 py-2 text-center">
+        <p className="text-[13px] leading-snug text-gray-400">
+          Save up to 40%{" "}
+          <span className="font-semibold text-white">
+            — try CloudLinux OS + ImunifyAV bundle
+          </span>
+        </p>
       </div>
 
-      <motion.nav
-        initial={{ y: -10, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.4 }}
-        className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur-md"
-      >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-8">
-          <a href="#" className="flex shrink-0 items-center">
+      <nav className="sticky top-0 z-50 border-b border-gray-200/60 bg-white/90 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-[1200px] items-center justify-between px-5 py-3.5 sm:px-8">
+          <a href="#" className="shrink-0">
             <Image
               src="/logos/cloudlinux-logo.svg"
               alt="CloudLinux"
-              width={160}
-              height={36}
-              className="h-7 w-auto sm:h-8"
+              width={150}
+              height={34}
+              className="h-7 w-auto"
               priority
             />
           </a>
 
-          {/* Desktop nav */}
-          <div className="hidden items-center gap-7 lg:flex">
+          {/* Desktop */}
+          <div className="hidden items-center gap-8 lg:flex">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-[13px] font-medium text-[#4B5563] transition-colors hover:text-[#111827]"
+                className="text-[14px] font-medium text-[#545769] transition-colors duration-200 hover:text-[#111827]"
               >
                 {link.label}
               </a>
             ))}
           </div>
 
-          <div className="hidden lg:block">
-            <a
-              href="#contact"
-              className="rounded-lg bg-[#2563EB] px-5 py-2.5 text-[13px] font-semibold text-white transition-all hover:bg-[#1D4ED8]"
-            >
-              Get Started Free
-            </a>
-          </div>
+          <a
+            href="#contact"
+            className="hidden rounded-full bg-[#2563EB] px-6 py-2.5 text-[13px] font-semibold text-white transition-all duration-200 hover:bg-[#1D4ED8] hover:shadow-lg hover:shadow-blue-500/20 lg:inline-flex"
+          >
+            Get Started Free
+          </a>
 
           {/* Mobile toggle */}
           <button
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 transition-colors hover:bg-gray-50 lg:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#111827"
-              strokeWidth="2"
-              strokeLinecap="round"
-            >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111827" strokeWidth="2" strokeLinecap="round">
               {mobileOpen ? (
-                <>
-                  <path d="M18 6L6 18" />
-                  <path d="M6 6l12 12" />
-                </>
+                <><path d="M18 6L6 18" /><path d="M6 6l12 12" /></>
               ) : (
-                <>
-                  <path d="M3 12h18" />
-                  <path d="M3 6h18" />
-                  <path d="M3 18h18" />
-                </>
+                <><path d="M3 12h18" /><path d="M3 6h18" /><path d="M3 18h18" /></>
               )}
             </svg>
           </button>
         </div>
 
-        {/* Mobile menu */}
         <AnimatePresence>
           {mobileOpen && (
             <motion.div
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.25 }}
+              transition={{ duration: 0.2 }}
               className="overflow-hidden border-t border-gray-100 lg:hidden"
             >
               <div className="flex flex-col gap-1 px-5 py-4">
@@ -112,7 +91,7 @@ export default function Navbar() {
                     key={link.label}
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="rounded-lg px-3 py-2.5 text-sm font-medium text-[#4B5563] hover:bg-gray-50 hover:text-[#111827]"
+                    className="rounded-xl px-4 py-3 text-[15px] font-medium text-[#545769] transition-colors hover:bg-gray-50 hover:text-[#111827]"
                   >
                     {link.label}
                   </a>
@@ -120,7 +99,7 @@ export default function Navbar() {
                 <a
                   href="#contact"
                   onClick={() => setMobileOpen(false)}
-                  className="mt-2 rounded-lg bg-[#2563EB] px-4 py-2.5 text-center text-sm font-semibold text-white"
+                  className="mt-3 rounded-full bg-[#2563EB] px-4 py-3 text-center text-[15px] font-semibold text-white"
                 >
                   Get Started Free
                 </a>
@@ -128,7 +107,7 @@ export default function Navbar() {
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.nav>
+      </nav>
     </>
   );
 }
