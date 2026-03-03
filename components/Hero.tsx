@@ -14,9 +14,9 @@ const partners = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden" style={{ padding: "clamp(3.5rem, 7vw, 5.5rem) clamp(1.25rem, 4vw, 3rem) clamp(2rem, 4vw, 3rem)" }}>
-      {/* Background */}
-      <div className="absolute inset-0">
+    <section className="relative overflow-hidden bg-[#0B1120]">
+      {/* Swirl graphic on right side */}
+      <div className="absolute inset-0 lg:left-[40%]">
         <Image
           src="/hero-bg.jpg"
           alt=""
@@ -26,11 +26,12 @@ export default function Hero() {
           sizes="100vw"
           quality={85}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B1120]/30 via-transparent to-[#0B1120]/60" />
+        <div className="absolute inset-0 bg-[#0B1120]/40 lg:bg-gradient-to-r lg:from-[#0B1120] lg:via-[#0B1120]/60 lg:to-transparent" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1200px]">
-        <div className="mx-auto max-w-[680px] text-center">
+      <div className="relative z-10 mx-auto max-w-[1200px] px-5 sm:px-8" style={{ paddingTop: "clamp(3rem, 6vw, 5rem)", paddingBottom: "clamp(2.5rem, 5vw, 4rem)" }}>
+        {/* Left-aligned on desktop, centered on mobile */}
+        <div className="mx-auto max-w-[520px] text-center lg:mx-0 lg:max-w-[540px] lg:text-left">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -44,7 +45,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.25 }}
-            className="mx-auto mb-7 max-w-[480px] text-[15px] leading-relaxed text-gray-300"
+            className="mb-7 max-w-[440px] text-[15px] leading-relaxed text-gray-300 max-lg:mx-auto"
           >
             We give web hosts the essential tools and solutions to deliver
             faster, more reliable, and secure websites.
@@ -54,7 +55,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-col items-center justify-center gap-3 sm:flex-row"
+            className="flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start"
           >
             <a
               href="#contact"
@@ -71,17 +72,17 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Partners */}
+        {/* Partner logos — always centered, single row */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="mx-auto mt-10 max-w-[680px] sm:mt-12"
+          className="mt-10 sm:mt-12"
         >
           <p className="mb-3 text-center text-[10px] font-semibold tracking-[0.15em] text-gray-400/60 uppercase sm:text-[11px]">
             Trusted by 200+ hosting providers
           </p>
-          <div className="flex items-center justify-center gap-x-5 gap-y-2 sm:gap-x-7">
+          <div className="flex items-center justify-center gap-x-4 overflow-hidden sm:gap-x-7">
             {partners.map((p) => (
               <Image
                 key={p.name}
@@ -95,9 +96,6 @@ export default function Hero() {
           </div>
         </motion.div>
       </div>
-
-      {/* Bottom fade into next section */}
-      <div className="pointer-events-none absolute right-0 bottom-0 left-0 h-16 bg-gradient-to-t from-white to-transparent" />
     </section>
   );
 }

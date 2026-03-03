@@ -89,19 +89,19 @@ export default function BusinessValue() {
           </h2>
         </motion.div>
 
-        {/* Tabs */}
+        {/* Tabs — horizontal scroll on mobile, row on desktop */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4, delay: 0.1 }}
-          className="mb-8 flex justify-center"
+          className="mb-6 flex justify-center"
         >
-          <div className="inline-flex gap-1 rounded-full border border-gray-200 bg-gray-50 p-1">
+          <div className="flex gap-1 overflow-x-auto rounded-full border border-gray-200 bg-gray-50 p-1 max-sm:w-full max-sm:scrollbar-none">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`rounded-full px-5 py-2 text-[13px] font-semibold transition-all duration-200 sm:text-[14px] ${
+                className={`shrink-0 rounded-full px-5 py-2 text-[13px] font-semibold whitespace-nowrap transition-all duration-200 sm:text-[14px] ${
                   activeTab === tab.id
                     ? "bg-[#2563EB] text-white shadow-md shadow-blue-500/20"
                     : "text-[#545769] hover:text-[#111827]"
@@ -113,7 +113,7 @@ export default function BusinessValue() {
           </div>
         </motion.div>
 
-        {/* Cards */}
+        {/* Cards — 3 side by side on md+, single column on mobile */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -121,22 +121,22 @@ export default function BusinessValue() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25 }}
-            className="grid gap-5 md:grid-cols-3"
+            className="grid gap-4 md:grid-cols-3"
           >
             {activeData.items.map((item, i) => (
               <div
                 key={i}
-                className="rounded-[14px] border border-gray-200/80 bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] transition-all duration-200 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]"
+                className="rounded-[14px] border border-gray-200/80 bg-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.04)] transition-all duration-200 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] sm:p-6"
               >
-                <div className="mb-4 inline-flex rounded-xl bg-blue-50 p-2.5 text-[#2563EB]">
+                <div className="mb-3 inline-flex rounded-xl bg-blue-50 p-2.5 text-[#2563EB]">
                   {item.icon}
                 </div>
-                <h3 className="mb-3 text-[16px] font-bold leading-snug text-[#111827]">
+                <h3 className="mb-2.5 text-[15px] font-bold leading-snug text-[#111827] sm:text-[16px]">
                   {item.title}
                 </h3>
-                <ul className="flex flex-col gap-2.5">
+                <ul className="flex flex-col gap-2">
                   {item.points.map((point, j) => (
-                    <li key={j} className="flex items-start gap-2.5 text-[13px] leading-relaxed text-[#545769] sm:text-[14px]">
+                    <li key={j} className="flex items-start gap-2 text-[13px] leading-relaxed text-[#545769] sm:text-[14px]">
                       <svg className="mt-[3px] h-4 w-4 shrink-0 text-[#2563EB]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>

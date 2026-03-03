@@ -27,24 +27,24 @@ export default function Portfolio() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="mb-8 text-center"
+          className="mb-6 text-center"
         >
           <h2 className="heading-lg text-[#111827]">
             Our <span className="text-[#2563EB]">Portfolio</span>
           </h2>
-          <p className="mx-auto mt-3 max-w-md text-[15px] text-[#545769]">
+          <p className="mx-auto mt-2 max-w-md text-[15px] text-[#545769]">
             Wide range of products, services, and solutions for web hosting
           </p>
         </motion.div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {products.map((product, i) => (
             <motion.div
               key={product.name}
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.35, delay: i * 0.04, ease: "easeOut" }}
-              className="group flex items-start gap-4 rounded-[14px] border border-gray-200/80 bg-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.04)] transition-all duration-200 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]"
+              className="group flex items-start gap-4 rounded-[14px] border border-gray-200/80 bg-white p-4 shadow-[0_1px_3px_rgba(0,0,0,0.04)] transition-all duration-200 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] sm:p-5"
             >
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gray-50">
                 <Image src={product.icon} alt={product.name} width={32} height={32} className="h-8 w-8 object-contain" />
@@ -61,7 +61,7 @@ export default function Portfolio() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.4, delay: 0.5 }}
-          className="mt-8 text-center"
+          className="mt-6 text-center"
         >
           <a href="#" className="inline-flex rounded-full bg-[#2563EB] px-7 py-3 text-[14px] font-bold uppercase tracking-wider text-white transition-all duration-200 hover:bg-[#1D4ED8] hover:shadow-lg hover:shadow-blue-500/20">
             View All Products & Offers

@@ -9,13 +9,13 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-200 bg-[#F8F9FB]" style={{ padding: "clamp(2rem, 3.5vw, 3rem) clamp(1.25rem, 4vw, 3rem) clamp(1.25rem, 2.5vw, 1.75rem)" }}>
+    <footer className="border-t border-gray-200 bg-[#F8F9FB]" style={{ padding: "clamp(2rem, 3vw, 2.5rem) clamp(1.25rem, 4vw, 3rem) clamp(1rem, 2vw, 1.5rem)" }}>
       <div className="mx-auto max-w-[1200px]">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-1">
             <Image src="/logos/cloudlinux-logo.svg" alt="CloudLinux" width={130} height={30} className="mb-3 h-6 w-auto" />
             <p className="text-[13px] leading-relaxed text-[#545769]">Making web hosting more secure, stable, and profitable since 2009.</p>
-            <div className="mt-5">
+            <div className="mt-4">
               <span className="text-[11px] text-[#545769]">Get in Touch</span>
               <br />
               <a href="mailto:sales@cloudlinux.com" className="text-[14px] font-medium text-[#2563EB] hover:underline">sales@cloudlinux.com</a>
@@ -25,7 +25,7 @@ export default function Footer() {
           {Object.entries(footerLinks).map(([heading, links]) => (
             <div key={heading}>
               <h4 className="mb-3 text-[13px] font-bold text-[#111827]">{heading}</h4>
-              <ul className="flex flex-col gap-2">
+              <ul className="flex flex-col gap-1.5">
                 {links.map((link) => (
                   <li key={link}><a href="#" className="text-[13px] text-[#545769] transition-colors duration-200 hover:text-[#2563EB]">{link}</a></li>
                 ))}
@@ -34,7 +34,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-gray-200 pt-6 md:flex-row">
+        <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-gray-200 pt-5 md:flex-row">
           <p className="text-[12px] text-[#545769]">&copy; {new Date().getFullYear()} CloudLinux Inc. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <span className="text-[11px] font-medium text-[#545769]">Follow Us</span>

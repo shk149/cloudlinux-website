@@ -29,12 +29,12 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Fluid section spacing — tuned for Mac retina screens (13"–27") */
+/* Section spacing — 80px max vertical padding */
 .section-pad {
   padding-left: clamp(1.25rem, 4vw, 3rem);
   padding-right: clamp(1.25rem, 4vw, 3rem);
-  padding-top: clamp(2.5rem, 4.5vw, 4rem);
-  padding-bottom: clamp(2.5rem, 4.5vw, 4rem);
+  padding-top: clamp(3rem, 5vw, 5rem);
+  padding-bottom: clamp(3rem, 5vw, 5rem);
 }
 
 /* Fluid headings */
@@ -50,13 +50,4 @@ body {
   line-height: 1.15;
   font-weight: 700;
   letter-spacing: -0.02em;
-}
-
-/* Marquee */
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.animate-marquee {
-  animation: marquee 35s linear infinite;
 }

@@ -11,7 +11,7 @@ export default function Testimonials() {
     <section ref={ref} className="section-pad bg-white">
       <div className="mx-auto max-w-[720px]">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-center">
-          <h2 className="heading-lg mb-6 text-[#111827]">
+          <h2 className="heading-lg mb-5 text-[#111827]">
             What <span className="text-[#2563EB]">Our Customers</span> Say
           </h2>
         </motion.div>
@@ -20,10 +20,10 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.12 }}
-          className="rounded-[14px] border border-gray-200/80 bg-[#F9FAFB] p-8 text-center shadow-[0_1px_3px_rgba(0,0,0,0.04)] sm:p-12"
+          className="rounded-[14px] border border-gray-200/80 bg-[#F9FAFB] p-6 text-center shadow-[0_1px_3px_rgba(0,0,0,0.04)] sm:p-10"
         >
-          <div className="mb-5 text-4xl leading-none text-[#2563EB]">&ldquo;</div>
-          <p className="mb-8 text-[15px] leading-[1.7] text-[#545769] italic sm:text-[17px]">
+          <div className="mb-4 text-4xl leading-none text-[#2563EB]">&ldquo;</div>
+          <p className="mb-6 text-[15px] leading-[1.7] text-[#545769] italic sm:text-[17px]">
             Hands down, the best decision that a web hosting company can make is
             to incorporate the CloudLinux OS and ImunifyAV bundle to their VPS
             services. There is nothing more on the market that could make your
@@ -38,7 +38,7 @@ export default function Testimonials() {
           </div>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ duration: 0.4, delay: 0.35 }} className="mt-8 text-center">
+        <motion.div initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ duration: 0.4, delay: 0.35 }} className="mt-6 text-center">
           <a href="#" className="inline-flex rounded-full border-2 border-[#2563EB] px-6 py-2.5 text-[14px] font-bold uppercase tracking-wider text-[#2563EB] transition-all duration-200 hover:bg-[#2563EB] hover:text-white">
             Read the Success Story
           </a>
