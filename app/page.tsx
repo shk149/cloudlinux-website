@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import MarqueeBanner from "@/components/MarqueeBanner";
 import BusinessValue from "@/components/BusinessValue";
 import Portfolio from "@/components/Portfolio";
 import CustomizeStack from "@/components/CustomizeStack";
@@ -14,7 +13,6 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <MarqueeBanner />
       <BusinessValue />
       <Portfolio />
       <CustomizeStack />

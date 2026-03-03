@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 
 export default function CTA() {
   const ref = useRef(null);
@@ -11,12 +12,17 @@ export default function CTA() {
     <section
       id="contact"
       ref={ref}
-      className="relative overflow-hidden bg-gradient-to-b from-[#0B1120] to-[#111827] px-6 py-24"
+      className="relative overflow-hidden px-6 py-24"
     >
-      {/* Floating orbs */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="animate-float-1 absolute -top-20 -right-20 h-[300px] w-[300px] rounded-full bg-[#2563EB]/15 blur-[100px]" />
-        <div className="animate-float-2 absolute -bottom-20 -left-20 h-[250px] w-[250px] rounded-full bg-[#1E40AF]/15 blur-[80px]" />
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/cta-bg.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          quality={80}
+        />
       </div>
 
       <motion.div
@@ -30,7 +36,7 @@ export default function CTA() {
           <br />
           more stable, secure, and fast?
         </h2>
-        <p className="mx-auto mb-10 max-w-xl text-gray-400">
+        <p className="mx-auto mb-10 max-w-xl text-gray-300">
           Start with a free trial of CloudLinux or ImunifyAV today.
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -42,7 +48,7 @@ export default function CTA() {
           </a>
           <a
             href="#"
-            className="inline-flex items-center gap-2 rounded-lg border-2 border-white/20 px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition-all hover:border-white/40 hover:bg-white/5"
+            className="inline-flex items-center gap-2 rounded-lg border-2 border-white/30 px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition-all hover:border-white/50 hover:bg-white/10"
           >
             Talk to an Expert
           </a>

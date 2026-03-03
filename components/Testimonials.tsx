@@ -8,7 +8,7 @@ export default function Testimonials() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="bg-[#F3F4F6] px-6 py-24">
+    <section ref={ref} className="bg-white px-6 py-24">
       <div className="mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -25,7 +25,7 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="rounded-2xl border border-gray-200 bg-white p-10 text-center shadow-sm md:p-14"
+          className="rounded-2xl border border-gray-200 bg-[#F9FAFB] p-10 text-center shadow-sm md:p-14"
         >
           <div className="mb-6 text-5xl text-[#2563EB]">&ldquo;</div>
           <p className="mb-8 text-lg leading-relaxed text-[#4B5563] italic">
@@ -35,7 +35,9 @@ export default function Testimonials() {
             web hosting plans faster, reliable... and safer.
           </p>
           <div className="flex items-center justify-center gap-4">
-            <div className="h-12 w-12 rounded-full bg-gradient-to-br from-[#2563EB] to-[#1E40AF]" />
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#2563EB] to-[#1E40AF] text-lg font-bold text-white">
+              N
+            </div>
             <div className="text-left">
               <p className="text-sm font-bold text-[#111827]">
                 Nelson Ollivier

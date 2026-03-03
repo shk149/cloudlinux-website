@@ -4,19 +4,19 @@ import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const stackProducts = [
-  "CloudLinux",
-  "AccelerateWP",
-  "Mike Cache",
-  "ImunifyAV",
-  "Imunify360",
-  "ImunifyAV+",
-  "Imunify Connect",
+  { name: "CloudLinux", default: true },
+  { name: "AccelerateWP", default: true },
+  { name: "Mike Cache", default: false },
+  { name: "ImunifyAV", default: false },
+  { name: "Imunify360", default: false },
+  { name: "ImunifyAV+", default: false },
+  { name: "Imunify Connect", default: false },
 ];
 
 const featureCategories = [
   {
     title: "Performance & Stability",
-    icon: "gauge",
+    color: "#2563EB",
     features: [
       "Ensure fair per-hosting-account resource allocation",
       "Avoid page errors and timeouts from resource limits",
@@ -27,7 +27,7 @@ const featureCategories = [
   },
   {
     title: "Security",
-    icon: "shield",
+    color: "#2563EB",
     features: [
       "Enterprise-class malware defense",
       "Real-time security vulnerability patching",
@@ -37,7 +37,7 @@ const featureCategories = [
   },
   {
     title: "Lifecycle",
-    icon: "refresh",
+    color: "#2563EB",
     features: [
       "Live patching for PHP and OpenSSL",
       "Extended lifecycle support for older distributions",
@@ -45,7 +45,7 @@ const featureCategories = [
   },
   {
     title: "Program Value",
-    icon: "star",
+    color: "#2563EB",
     features: [
       "Up to 40% VPS savings with bundles",
       "White-label PHP version with your brand's name",
@@ -54,10 +54,9 @@ const featureCategories = [
 ];
 
 export default function CustomizeStack() {
-  const [selectedProducts, setSelectedProducts] = useState<string[]>([
-    "CloudLinux",
-    "AccelerateWP",
-  ]);
+  const [selectedProducts, setSelectedProducts] = useState<string[]>(
+    stackProducts.filter((p) => p.default).map((p) => p.name)
+  );
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -70,7 +69,7 @@ export default function CustomizeStack() {
   };
 
   return (
-    <section ref={ref} className="bg-white px-6 py-24">
+    <section ref={ref} className="bg-gradient-to-b from-[#F0F5FF] to-[#E8EFF9] px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -91,27 +90,31 @@ export default function CustomizeStack() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-12 grid gap-12 lg:grid-cols-2"
+          className="mt-12 grid gap-10 lg:grid-cols-[280px_1fr]"
         >
           {/* Left - Select Products */}
           <div>
-            <h3 className="mb-6 text-lg font-bold text-[#111827]">
+            <h3 className="mb-5 text-sm font-bold uppercase tracking-wide text-[#111827]">
               Select Products
             </h3>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-2">
               {stackProducts.map((product) => (
                 <label
-                  key={product}
-                  className="flex cursor-pointer items-center gap-3 rounded-lg border border-gray-200 px-5 py-4 transition-all hover:border-[#2563EB]/30 hover:bg-blue-50/30"
+                  key={product.name}
+                  className={`flex cursor-pointer items-center gap-3 rounded-lg border px-4 py-3 transition-all ${
+                    selectedProducts.includes(product.name)
+                      ? "border-[#2563EB]/40 bg-white shadow-sm"
+                      : "border-gray-200 bg-white/60 hover:border-[#2563EB]/20 hover:bg-white"
+                  }`}
                 >
                   <input
                     type="checkbox"
-                    checked={selectedProducts.includes(product)}
-                    onChange={() => toggleProduct(product)}
+                    checked={selectedProducts.includes(product.name)}
+                    onChange={() => toggleProduct(product.name)}
                     className="h-4 w-4 rounded border-gray-300 text-[#2563EB] accent-[#2563EB]"
                   />
                   <span className="text-sm font-medium text-[#111827]">
-                    {product}
+                    {product.name}
                   </span>
                 </label>
               ))}
@@ -119,11 +122,11 @@ export default function CustomizeStack() {
           </div>
 
           {/* Right - What You Gain */}
-          <div>
-            <h3 className="mb-6 text-lg font-bold text-[#111827]">
+          <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+            <h3 className="mb-6 text-sm font-bold uppercase tracking-wide text-[#111827]">
               What You Gain
             </h3>
-            <div className="flex flex-col gap-6">
+            <div className="grid gap-6 sm:grid-cols-2">
               {featureCategories.map((category, i) => (
                 <motion.div
                   key={category.title}
@@ -131,20 +134,7 @@ export default function CustomizeStack() {
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
                 >
-                  <h4 className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-[#2563EB]">
-                    <svg
-                      className="h-4 w-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                      />
-                    </svg>
+                  <h4 className="mb-3 text-sm font-bold text-[#2563EB]">
                     {category.title}
                   </h4>
                   <ul className="flex flex-col gap-2">
@@ -158,12 +148,12 @@ export default function CustomizeStack() {
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
-                          strokeWidth={2}
+                          strokeWidth={2.5}
                         >
                           <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            d="M5 13l4 4L19 7"
+                            d="M4.5 12.75l6 6 9-13.5"
                           />
                         </svg>
                         {feature}

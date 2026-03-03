@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 
 const tabs = [
   {
@@ -9,19 +9,43 @@ const tabs = [
     label: "Hosting Providers",
     items: [
       {
-        title: "Grow revenue while reducing operational costs",
-        description:
-          "Whether you do shared hosting or VPS, save on resources by up to 30% while increasing average revenue per user with fewer headaches.",
+        icon: (
+          <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+          </svg>
+        ),
+        title: "Grow revenue while reducing costs",
+        points: [
+          "Save on resources by up to 30% with smart allocation",
+          "Increase average revenue per user with premium plans",
+          "Fewer server headaches with automated management",
+        ],
       },
       {
-        title: "Lower support costs",
-        description:
-          "Automated security and performance optimization means far fewer tickets. Reduce support time by 50% with built-in monitoring.",
+        icon: (
+          <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+          </svg>
+        ),
+        title: "Lower support costs dramatically",
+        points: [
+          "Automated security reduces tickets by 50%+",
+          "Built-in monitoring catches issues before users do",
+          "Self-healing infrastructure means fewer escalations",
+        ],
       },
       {
+        icon: (
+          <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+          </svg>
+        ),
         title: "Increase revenue per customer",
-        description:
-          "Advanced caching and WordPress optimization let you offer premium hosting plans at higher margins.",
+        points: [
+          "Advanced caching for premium hosting tiers",
+          "WordPress optimization justifies higher pricing",
+          "Bundle products to maximize plan value",
+        ],
       },
     ],
   },
@@ -30,19 +54,43 @@ const tabs = [
     label: "Agencies & Developers",
     items: [
       {
+        icon: (
+          <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+          </svg>
+        ),
         title: "Launch projects with confidence",
-        description:
-          "Reliable infrastructure eliminates hosting-related issues. Never worry about client site downtime or slow performance.",
+        points: [
+          "Reliable infrastructure eliminates hosting issues",
+          "Never worry about client site downtime",
+          "Consistent performance across all projects",
+        ],
       },
       {
+        icon: (
+          <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+          </svg>
+        ),
         title: "Protect your reputation",
-        description:
-          "Enterprise-grade security means your client sites stay safe, reducing incident response time and maintaining trust.",
+        points: [
+          "Enterprise-grade security keeps client sites safe",
+          "Reduce incident response time significantly",
+          "Maintain trust with proactive protection",
+        ],
       },
       {
+        icon: (
+          <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+          </svg>
+        ),
         title: "Differentiate from competitors",
-        description:
-          "Offer premium WordPress hosting with built-in acceleration that positions you above the competition.",
+        points: [
+          "Offer premium WordPress hosting with built-in acceleration",
+          "Position above competition with superior security",
+          "Deliver faster sites that convert better",
+        ],
       },
     ],
   },
@@ -51,19 +99,43 @@ const tabs = [
     label: "Site Owners",
     items: [
       {
-        title: "Protect your reputation",
-        description:
-          "Keep your website fast, secure, and always available so your customers&apos; visits never result in frustration.",
+        icon: (
+          <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 003 12c0-1.605.42-3.113 1.157-4.418" />
+          </svg>
+        ),
+        title: "Keep your website fast and secure",
+        points: [
+          "Always-on protection for your online presence",
+          "Faster page loads improve visitor experience",
+          "Automatic security updates without downtime",
+        ],
       },
       {
-        title: "Differentiate from competitors",
-        description:
-          "Website speed directly impacts conversion. Faster load times help you outperform competitors in search rankings.",
+        icon: (
+          <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+          </svg>
+        ),
+        title: "Outperform competitors in search",
+        points: [
+          "Website speed directly impacts conversion rates",
+          "Faster load times improve SEO rankings",
+          "Better Core Web Vitals scores",
+        ],
       },
       {
-        title: "Better performance, lower pricing",
-        description:
-          "Get enterprise-level hosting performance without the enterprise price tag. Smart resource allocation means lower costs.",
+        icon: (
+          <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        ),
+        title: "Enterprise performance, fair pricing",
+        points: [
+          "Get enterprise-level hosting without the price tag",
+          "Smart resource allocation means lower costs",
+          "No hidden fees or surprise overages",
+        ],
       },
     ],
   },
@@ -102,7 +174,7 @@ export default function BusinessValue() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`rounded-lg px-6 py-3 text-sm font-semibold transition-all ${
+                className={`rounded-lg px-5 py-2.5 text-sm font-semibold transition-all ${
                   activeTab === tab.id
                     ? "bg-[#2563EB] text-white shadow-md"
                     : "text-[#4B5563] hover:text-[#111827]"
@@ -115,25 +187,51 @@ export default function BusinessValue() {
         </motion.div>
 
         {/* Cards */}
-        <div className="grid gap-8 md:grid-cols-3">
-          {activeData.items.map((item, i) => (
-            <motion.div
-              key={`${activeTab}-${i}`}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
-            >
-              <div className="mb-4 text-3xl text-[#2563EB]">&ldquo;</div>
-              <h3 className="mb-3 text-lg font-bold text-[#111827]">
-                {item.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-[#4B5563]">
-                {item.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.35 }}
+            className="grid gap-8 md:grid-cols-3"
+          >
+            {activeData.items.map((item, i) => (
+              <div
+                key={i}
+                className="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
+              >
+                <div className="mb-5 text-[#2563EB]">{item.icon}</div>
+                <h3 className="mb-4 text-lg font-bold text-[#111827]">
+                  {item.title}
+                </h3>
+                <ul className="flex flex-col gap-2.5">
+                  {item.points.map((point, j) => (
+                    <li
+                      key={j}
+                      className="flex items-start gap-2.5 text-sm leading-relaxed text-[#4B5563]"
+                    >
+                      <svg
+                        className="mt-0.5 h-4 w-4 shrink-0 text-[#2563EB]"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2.5}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M4.5 12.75l6 6 9-13.5"
+                        />
+                      </svg>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );
